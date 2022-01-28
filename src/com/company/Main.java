@@ -1,13 +1,14 @@
 package com.company;
 
+import com.creatures.Animal;
+import com.creatures.FarmAnimal;
+import com.creatures.Pet;
 import com.devices.Car;
-import com.devices.Device;
 import com.devices.Phone;
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("canis");
-        dog.name = "Szarik";
+        Pet dog = new Pet("canis","Szarik");
         dog.feed();
         dog.takeforawalk();
         dog.takeforawalk();
@@ -26,8 +27,7 @@ public class Main {
 
         System.out.println("nazwapsa:" + dog.name);
 
-        Animal cat = new Animal("felis");
-        cat.name = "Sierściuch";
+        Pet cat = new Pet("felis","Sierściuch");;
         cat.feed();
 
         System.out.println("nazwakota:" + cat.name);
@@ -36,8 +36,8 @@ public class Main {
         cat.takeforawalk();
         cat.takeforawalk();
         cat.takeforawalk();
-        cat.takeforawalk();
-        cat.takeforawalk();
+
+
 
         Car car1 = new Car("BMW","Serie 1",2005);
 
@@ -103,7 +103,7 @@ public class Main {
 
         sm1.introduceYourself();
 
-        cat.sellpet(me, sm1, 5000.00);
+        cat.sell(me, sm1, 5000.00);
 
         sm1.getCash();
         me.getCash();
@@ -112,12 +112,22 @@ public class Main {
 
         me.phone = phone1;
 
-        phone1.sellphone(me, sm1, 500.00);
-        car1.sellCar(me, sm1, 14000.00);
+        phone1.sell(me, sm1, 500.00);
+        car1.sell(me, sm1, 14000.00);
 
         sm1.getCash();
         me.getCash();
 
+
+        FarmAnimal cow = new FarmAnimal("taurus","Mućka");
+
+        cow.beEaten();
+
+        cow.beEaten();
+
+        cow.beEaten();
+
+        cat.feed(30.0);
 	// write your code here
     }
 }

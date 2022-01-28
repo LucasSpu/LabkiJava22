@@ -1,12 +1,13 @@
 package com.company;
 
 
+import com.creatures.Animal;
 import com.devices.Car;
 import com.devices.Phone;
 public class Human
 {
 
-    Animal pet;
+   public Animal pet;
     String firstname;
     String lastname;
     Integer age;
