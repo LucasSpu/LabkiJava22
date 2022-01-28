@@ -2,7 +2,7 @@ package com.company;
 
 import com.devices.Car;
 import com.devices.Device;
-
+import com.devices.Phone;
 public class Main {
 
     public static void main(String[] args) {
@@ -55,6 +55,7 @@ public class Main {
         me.setSalary(1000.00);
         me.getSalary();
         me.getRaise(3000.00);
+        me.cash = 3000.00;
 
         me.getCar();
         me.buyCar(car1);
@@ -90,6 +91,32 @@ public class Main {
 
       car1.turnOn();
 
+        Human sm1 = new Human();
+        sm1.firstname = "Joseph";
+        sm1.lastname = "Stalin";
+        sm1.age = 44;
+        sm1.introduceYourself();
+        sm1.pet = cat;
+        sm1.cash = 20000.00;
+
+        sm1.getCash();
+
+        sm1.introduceYourself();
+
+        cat.sellpet(me, sm1, 5000.00);
+
+        sm1.getCash();
+        me.getCash();
+
+        Phone phone1 = new Phone("Nokia","3310",2000);
+
+        me.phone = phone1;
+
+        phone1.sellphone(me, sm1, 500.00);
+        car1.sellCar(me, sm1, 14000.00);
+
+        sm1.getCash();
+        me.getCash();
 
 	// write your code here
     }

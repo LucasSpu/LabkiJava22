@@ -5,7 +5,7 @@ public abstract class Device
     public final String producer;
     public final String model;
     public final Integer yearOfProduction;
-    public Double value;
+    public Double price;
 
     public Device(String producer, String model, Integer yearOfProduction) {
         this.producer = producer;
@@ -18,6 +18,8 @@ public abstract class Device
        return producer+" "+model+" "+yearOfProduction;
     }
    public abstract void turnOn();
+
+
 
 
 }

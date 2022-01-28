@@ -2,16 +2,24 @@ package com.company;
 
 
 import com.devices.Car;
-
+import com.devices.Phone;
 public class Human
 {
+
     Animal pet;
     String firstname;
     String lastname;
     Integer age;
     private Double salary;
-    private Car car;
-    Integer cash;
+    public Car car;
+    public Double cash;
+    public Boolean forSale;
+    public Phone phone;
+
+   Human()
+   {
+       forSale = false;
+   }
 
 
     public void introduceYourself()
@@ -26,6 +34,10 @@ public class Human
     }
 
 
+    public void getCash()
+    {
+        System.out.println("Your current cash amount is: " + cash);
+    }
     public void setSalary(double sal)
     {
         this.salary = sal;

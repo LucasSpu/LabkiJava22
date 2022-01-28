@@ -5,11 +5,14 @@ public class Animal {
     private Double weight;
     public String name;
     public Boolean alive;
+    public Boolean forSale;
+
 
     public Animal(String species) {
 
         this.species = species;
         alive = true;
+        forSale = true;
 
         if (this.species == "canis")
         {
@@ -53,6 +56,18 @@ public class Animal {
             {
                 return species+ " " +name;
             }
+
+    public void sellpet(Human seller, Human buyer, Double price) {
+        if (this.forSale == true && buyer.cash >= price) {
+            buyer.pet = this;
+            seller.pet = null;
+            buyer.cash -= price;
+            seller.cash += price;
+            System.out.println(buyer.toString() +" Bought from "+ seller.toString() +" pet "+ this.toString());
+        }else {
+            System.out.println("Transaction is impossible");
+        }
+    }
 
     }
 
