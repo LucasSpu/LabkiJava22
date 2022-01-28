@@ -5,7 +5,7 @@ package com.devices;
 import com.company.Human;
 import com.company.sellable;
 
-public class Phone extends Device {
+public class Phone extends Device implements sellable {
     String color;
     public Boolean forSale;
 
@@ -24,7 +24,7 @@ public class Phone extends Device {
     }
 
 
-    public void sellphone(Human seller, Human buyer, Double price) {
+    public void sell(Human seller, Human buyer, Double price) {
         if (this.forSale == true && buyer.cash >= price) {
             buyer.phone = this;
             seller.phone = null;
