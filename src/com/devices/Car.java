@@ -3,7 +3,7 @@ package com.devices;
 import com.company.Human;
 import com.company.sellable;
 
-public class Car extends Device implements sellable {
+public abstract class Car extends Device implements sellable {
     public Integer seats;
     public String color;
     public Integer price;
@@ -38,15 +38,16 @@ public class Car extends Device implements sellable {
     public void sell(Human seller, Human buyer, Double price) {
 
         if (this.forSale == true && buyer.cash >= price) {
-            buyer.car = this;
-            seller.car = null;
+            //buyer.garage[parkingLotNumber] = this;
+            //seller.garage[parkingLotNumber] = null;
             buyer.cash -= price;
             seller.cash += price;
             System.out.println(buyer.toString() + " Bought from " + seller.toString() + " car " + this.toString());
         } else {
             System.out.println("Transaction is impossible");
 
-
         }
     }
+            public abstract void refuel();
 }
+

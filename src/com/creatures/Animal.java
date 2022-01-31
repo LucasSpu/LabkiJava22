@@ -41,14 +41,7 @@ public abstract class Animal implements sellable, Feedable
 
         public void feed()
         {
-            if (this.weight > 0 )
-            {
-                this.weight++;
-            }
-            else if (this.weight < 1)
-            {
-                System.out.println("it would be unwise to feed a dead animal");
-            }
+           this.feed(1.0);
         }
 
 
