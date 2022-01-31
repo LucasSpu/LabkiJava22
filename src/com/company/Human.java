@@ -7,12 +7,13 @@ import com.devices.Phone;
 public class Human
 {
 
-   public Animal pet;
+    private static final int DEFAULT_GARAGE_SIZE = 3;
+    public Animal pet;
     String firstname;
     String lastname;
     Integer age;
     private Double salary;
-    public Car car;
+    public Car[] garage;
     public Double cash;
     public Boolean forSale;
     public Phone phone;
@@ -20,7 +21,15 @@ public class Human
    Human()
    {
        forSale = false;
+       this.garage = new Car[DEFAULT_GARAGE_SIZE];
    }
+
+   Human(Integer garageSize)
+   {
+       this.salary = 1200.0;
+       this.garage = new Car[garageSize];
+   }
+
 
 
     public void introduceYourself()
@@ -61,25 +70,18 @@ public class Human
     }
 
 
-    public void getCar()
+    public Car getCar(Integer parkingLotNumber)
         {
-            if (car == null)
-            {
-                System.out.println("You don't own a car");
-            }
-            else
-            {
-                System.out.println("Your car is: " + car.producer +" " +car.model);
-            }
+            return this.garage[parkingLotNumber];
         }
 
-    public void buyCar(Car car) {
+    public void buyCar(Car car, Integer parkingLotNumber) {
         if (car.price < salary) {
             System.out.println("You bought the car for cash");
-            this.car = car;
+            this.garage[parkingLotNumber] = car;
         } else if (car.price / 12 < salary) {
             System.out.println("You took a loan for a " + car.producer + " " + car.model);
-            this.car = car;
+            this.garage[parkingLotNumber] = car;
         } else {
             System.out.println("Go to college, change your career, or ask for a raise");
         }

@@ -1,13 +1,19 @@
 package com.company;
 
-import com.creatures.Animal;
 import com.creatures.FarmAnimal;
 import com.creatures.Pet;
-import com.devices.Car;
+import com.devices.Electric;
+import com.devices.LPG;
 import com.devices.Phone;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
         Pet dog = new Pet("canis","Szarik");
         dog.feed();
         dog.takeforawalk();
@@ -39,7 +45,7 @@ public class Main {
 
 
 
-        Car car1 = new Car("BMW","Serie 1",2005);
+        LPG car1 = new LPG("BMW","Serie 1",2005);
 
         car1.seats = 5;
 
@@ -57,14 +63,14 @@ public class Main {
         me.getRaise(3000.00);
         me.cash = 3000.00;
 
-        me.getCar();
-        me.buyCar(car1);
+        me.getCar(1);
+        me.buyCar(car1, 2);
 
-        me.getCar();
+        me.getCar(2);
 
         me.getPet();
 
-        Car car2 = new Car("BMW","serie 1",2005);
+        LPG car2 = new LPG("BMW","serie 1",2005);
 
 
         car2.seats = 5;
@@ -72,7 +78,7 @@ public class Main {
         car2.color = "Dark Grey";
         car2.price = 13000;
 
-        Car car3 = new Car("Fiat","Punto",2004);
+        LPG car3 = new LPG("Fiat","Punto",2004);
 
 
         car3.seats = 5;
@@ -128,6 +134,19 @@ public class Main {
         cow.beEaten();
 
         cat.feed(30.0);
-	// write your code here
+
+        Electric car4 = new Electric("Tesla","X",2016);
+
+        car1.refuel();
+        car4.refuel();
+
+List<String> appNames = new LinkedList<>();
+appNames.add("fb");
+appNames.add("Ig");
+
+phone1.installAnApp(appNames);
+        URL url1 = new URL("https", "wsb", 442, "FB" + "_" + 2.0);
+
+phone1.installAnApp(url1);
     }
 }
