@@ -5,11 +5,12 @@ import com.creatures.Pet;
 import com.devices.Electric;
 import com.devices.LPG;
 import com.devices.Phone;
-
+import com.devices.Car;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Arrays;
 
 public class Main {
 
@@ -46,11 +47,9 @@ public class Main {
 
 
         LPG car1 = new LPG("BMW","Serie 1",2005);
-
         car1.seats = 5;
-
         car1.color = "Dark Grey";
-        car1.price = 13000;
+        car1.price = 15000.00;
 
         Human me = new Human();
         me.firstname = "Lucas";
@@ -63,37 +62,30 @@ public class Main {
         me.getRaise(3000.00);
         me.cash = 3000.00;
 
-        me.getCar(1);
-        me.buyCar(car1, 2);
-
-        me.getCar(2);
-
+        //me.garageValue();
         me.getPet();
 
-        LPG car2 = new LPG("BMW","serie 1",2005);
-
-
+        LPG car2 = new LPG("BMW","Serie 1",2005);
         car2.seats = 5;
-
         car2.color = "Dark Grey";
-        car2.price = 13000;
+        car2.price = 15000.00;
+        //me.garageValue();
 
         LPG car3 = new LPG("Fiat","Punto",2004);
-
-
         car3.seats = 5;
-
         car3.color = "Red";
-        car3.price = 5000;
-
-
+        car3.price = 3000.00;
+       // me.garageValue();
+        System.out.println(me.garage[0]);
+        System.out.println(me.garage[1]);
+        System.out.println(me.garage[2]);
 
       System.out.println(car1.equals(car2));
       System.out.println(car1.equals(car3));
 
-      System.out.println(dog);
-      System.out.println(car1);
-      System.out.println(car2);
+      //System.out.println(dog);
+      //System.out.println(car1);
+      //System.out.println(car2);
 
       car1.turnOn();
 
@@ -109,17 +101,17 @@ public class Main {
 
         sm1.introduceYourself();
 
-        cat.sell(me, sm1, 5000.00);
+        //cat.sell(me, sm1, 5000.00);
 
         sm1.getCash();
         me.getCash();
 
-        Phone phone1 = new Phone("Nokia","3310",2000);
+        Phone phone1 = new Phone("Nokia","3310",2000, 500.00);
 
         me.phone = phone1;
 
-        phone1.sell(me, sm1, 500.00);
-        car1.sell(me, sm1, 14000.00);
+        //phone1.sell(me, sm1, 500.00);
+        //car1.Carsell(me, sm1, 14000.00);
 
         sm1.getCash();
         me.getCash();
@@ -135,7 +127,8 @@ public class Main {
 
         cat.feed(30.0);
 
-        Electric car4 = new Electric("Tesla","X",2016);
+        Electric car4 = new Electric("Tesla","X",2016,50000.00);
+        car4.price = 10000.00;
 
         car1.refuel();
         car4.refuel();
@@ -148,5 +141,48 @@ phone1.installAnApp(appNames);
         URL url1 = new URL("https", "wsb", 442, "FB" + "_" + 2.0);
 
 phone1.installAnApp(url1);
+
+car1.getPrice();
+car2.getPrice();
+car3.getPrice();
+
+//me.garageValue();
+
+me.setCar(car4,0);
+me.getCar(0);
+me.buyCar(car1,1);
+me.getCar(1);
+//me.setCar(car4,3);
+//me.getCar(3);
+
+me.garageValue();
+
+//System.out.println(me.garage[0]);
+//System.out.println(me.garage[1]);
+
+
+        me.listGarage();
+        System.out.println(me.cash);
+        System.out.println(sm1.cash);
+        //me.sortGarage();
+// me.getCar(0);
+// sm1.setCar(car4, 0);
+        sm1.setCar(car2,0);
+        sm1.setCar(car3,1);
+       // sm1.setCar(car4,2);
+me.hasCar(car1);
+sm1.sortGarage();
+me.sortGarage();
+        car1.sellCar(me,sm1,5000.00);
+
+        me.getCar(1);
+sm1.getCar(2);
+
+        System.out.println(me.cash);
+        System.out.println(sm1.cash);
+
+      sm1.sortGarage();
+
+      me.sortGarage();
+        }
     }
-}
