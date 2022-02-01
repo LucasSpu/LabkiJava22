@@ -19,10 +19,11 @@ public class Phone extends Device implements sellable {
     public String installedApp;
 
 
-    public Phone(String producer, String model, Integer yearOfProduction) throws MalformedURLException {
+    public Phone(String producer, String model, Integer yearOfProduction, Double price) throws MalformedURLException {
         super(producer, model, yearOfProduction);
         forSale = true;
         installedApp = "OS";
+        price = this.price;
     }
 
 
