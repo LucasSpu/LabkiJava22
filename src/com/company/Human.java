@@ -84,6 +84,7 @@ public class Human
 
     public Car getCar(Integer parkingLotNumber)
         {
+
             System.out.println("the car in parking lot number "+parkingLotNumber+" is "+this.garage[parkingLotNumber]);
             return this.garage[parkingLotNumber];
 
@@ -111,11 +112,13 @@ public class Human
             System.out.println("You bought the car for cash");
             System.out.println("it has been added to parking lot number: "+parkingLotNumber);
             this.garage[parkingLotNumber] = car;
+            car.owners.add(this);
         } else if (car.price / 12 < salary)
         {
             System.out.println("You took a loan for a " + car.producer + " " + car.model);
             System.out.println("It has been added to parking lot number: "+parkingLotNumber);
             this.garage[parkingLotNumber] = car;
+            car.owners.add(this);
         }
         else
         {
@@ -167,6 +170,7 @@ public class Human
           Arrays.sort(garage, Comparator.nullsLast(Comparator.comparing(Device::getYearOfProduction)));
           System.out.println(Arrays.toString(garage));
       }
+
 
 
 }

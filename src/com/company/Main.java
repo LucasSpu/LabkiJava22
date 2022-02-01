@@ -2,10 +2,8 @@ package com.company;
 
 import com.creatures.FarmAnimal;
 import com.creatures.Pet;
-import com.devices.Electric;
-import com.devices.LPG;
-import com.devices.Phone;
-import com.devices.Car;
+import com.devices.*;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
@@ -51,6 +49,10 @@ public class Main {
         car1.color = "Dark Grey";
         car1.price = 15000.00;
 
+        System.out.println("These are:"+car1.owners);
+
+
+
         Human me = new Human();
         me.firstname = "Lucas";
         me.lastname = "Spus";
@@ -69,7 +71,10 @@ public class Main {
         car2.seats = 5;
         car2.color = "Dark Grey";
         car2.price = 15000.00;
+        //car2.owner = me;
         //me.garageValue();
+
+        System.out.println("These are:"+car2.owners);
 
         LPG car3 = new LPG("Fiat","Punto",2004);
         car3.seats = 5;
@@ -79,6 +84,8 @@ public class Main {
         System.out.println(me.garage[0]);
         System.out.println(me.garage[1]);
         System.out.println(me.garage[2]);
+
+        System.out.println("These are:"+car3.owners);
 
       System.out.println(car1.equals(car2));
       System.out.println(car1.equals(car3));
@@ -150,16 +157,18 @@ car3.getPrice();
 
 me.setCar(car4,0);
 me.getCar(0);
-me.buyCar(car1,1);
+//me.buyCar(car1,1);
+        me.buyCar(car1,1);
 me.getCar(1);
 //me.setCar(car4,3);
 //me.getCar(3);
-
+        System.out.println("These are:"+car1.owners);
+        System.out.println("These are:"+car4.owners);
 me.garageValue();
 
 //System.out.println(me.garage[0]);
 //System.out.println(me.garage[1]);
-
+//car1.owners.add(me);
 
         me.listGarage();
         System.out.println(me.cash);
@@ -169,11 +178,17 @@ me.garageValue();
 // sm1.setCar(car4, 0);
         sm1.setCar(car2,0);
         sm1.setCar(car3,1);
-       // sm1.setCar(car4,2);
+
+        System.out.println("These are:"+car2.owners);
+        System.out.println("These are:"+car3.owners);
+
+        // sm1.setCar(car4,2);
 me.hasCar(car1);
 sm1.sortGarage();
 me.sortGarage();
         car1.sellCar(me,sm1,5000.00);
+
+        System.out.println("These are:"+car1.owners);
 
         me.getCar(1);
 sm1.getCar(2);
@@ -184,5 +199,29 @@ sm1.getCar(2);
       sm1.sortGarage();
 
       me.sortGarage();
+
+    //  me.setCar(car1,1);
+        me.listGarage();
+
+
+me.buyCar(car3,1);
+me.listGarage();
+      //  car1.sellCar(me,sm1,10000.00);
+        System.out.println(car1.owners);
+        System.out.println(car2.owners);
+        System.out.println(car3.owners);
+        System.out.println(car4.owners);
+
+        Diesel car5 = new Diesel("BMW","Serie 2",2018,30000.00);
+        System.out.println(car5.owners);
+       // car5.getOwnersL();
+car3.getPastOwner(sm1);
+
+car1.getTransaction(me,sm1);
+car3.getTransaction(me,sm1);
+
+car3.howManyTransactions();
+car1.howManyTransactions();
+car2.howManyTransactions();
         }
     }
