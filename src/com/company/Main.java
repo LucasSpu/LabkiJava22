@@ -223,5 +223,33 @@ car3.getTransaction(me,sm1);
 car3.howManyTransactions();
 car1.howManyTransactions();
 car2.howManyTransactions();
+
+
+Application app1 = new Application("Youtube",0.00,2.00);
+Application app2 = new Application("Facebook",0.00,3.04);
+        Application app3 = new Application("Instagram",0.00,2.07);
+        Application app4 = new Application("Notepad",2.00,4.04);
+sm1.cash = 10000.00;
+phone1.installAPP(sm1,app1);
+
+        System.out.println(sm1.cash);
+
+phone1.installAPP(sm1,app2);
+phone1.isAppInstalled(app2);
+phone1.isAppInstalled(app3);
+phone1.installAPP(sm1, app4);
+phone1.installAPP(sm1,app3);
+
+phone1.isAppNameInstalled("Instagram");
+
+//phone1.listOfAppsPrices();
+ //       System.out.println(phone1.applications.toString());
+
+//phone1.AppListAlphabet();
+//phone1.AppListbyPrice();
+//phone1.freeInstalledApps();
+
+
+//phone1.isAppNameInstalled("Notepad");
         }
     }
